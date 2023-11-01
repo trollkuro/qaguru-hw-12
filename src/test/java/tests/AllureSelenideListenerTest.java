@@ -18,9 +18,9 @@ public class AllureSelenideListenerTest extends TestBase {
     private SearchPage searchPage = new SearchPage();
     private RepositoryPage repositoryPage = new RepositoryPage();
     private IssuePage issuePage = new IssuePage();
-    private final static String searchQuery = "in:name trollkuro/qaguru-hw-12";
-    private final static String repositoryTitle = "trollkuro/qaguru-hw-12";
-    private final static String issueTitle = "Simple test issue";
+    private final static String SEARCH_QUERY = "in:name trollkuro/qaguru-hw-12";
+    private final static String REPOSITORY_TITLE = "trollkuro/qaguru-hw-12";
+    private final static String ISSUE_TITLE = "Simple test issue";
 
 
     @Test
@@ -30,9 +30,9 @@ public class AllureSelenideListenerTest extends TestBase {
     void testWithSelenideListener(){
         SelenideLogger.addListener("allure", new AllureSelenide());
         mainPage.openPage();
-        mainPage.setSearchQuery(searchQuery);
-        searchPage.selectRepository(repositoryTitle);
+        mainPage.setSearchQuery(SEARCH_QUERY);
+        searchPage.selectRepository(REPOSITORY_TITLE);
         repositoryPage.clickIssueTab();
-        issuePage.checkFirstIssueTitle(issueTitle);
+        issuePage.checkFirstIssueTitle(ISSUE_TITLE);
     }
 }

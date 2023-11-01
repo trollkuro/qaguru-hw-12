@@ -9,9 +9,9 @@ import websteps.GithubIssueCheckSteps;
 public class AllureStepsAnnotationTest extends TestBase {
 
     GithubIssueCheckSteps steps = new GithubIssueCheckSteps();
-    private final static String searchQuery = "in:name trollkuro/qaguru-hw-12";
-    private final static String repositoryTitle = "trollkuro/qaguru-hw-12";
-    private final static String issueTitle = "Simple test issue";
+    private final static String SEARCH_QUERY = "in:name trollkuro/qaguru-hw-12";
+    private final static String REPOSITORY_TITLE = "trollkuro/qaguru-hw-12";
+    private final static String ISSUE_TITLE = "Simple test issue";
 
     @Test
     @Feature("Issue")
@@ -19,9 +19,9 @@ public class AllureStepsAnnotationTest extends TestBase {
     @DisplayName("StepsAnnotation: Check the first issue in the repository")
     void testWithStepsAnnotation(){
         steps.openPage();
-        steps.searchRepository(searchQuery);
-        steps.selectRepository(repositoryTitle);
+        steps.searchRepository(SEARCH_QUERY);
+        steps.selectRepository(REPOSITORY_TITLE);
         steps.clickIssueTab();
-        steps.checkFirstIssueTitle(issueTitle);
+        steps.checkFirstIssueTitle(ISSUE_TITLE);
     }
 }

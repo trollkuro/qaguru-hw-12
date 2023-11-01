@@ -19,9 +19,9 @@ public class AllureLambdaStepsTest extends TestBase {
     private SearchPage searchPage = new SearchPage();
     private RepositoryPage repositoryPage = new RepositoryPage();
     private IssuePage issuePage = new IssuePage();
-    private final static String searchQuery = "in:name trollkuro/qaguru-hw-12";
-    private final static String repositoryTitle = "trollkuro/qaguru-hw-12";
-    private final static String issueTitle = "Simple test issue";
+    private final static String SEARCH_QUERY = "in:name trollkuro/qaguru-hw-12";
+    private final static String REPOSITORY_TITLE = "trollkuro/qaguru-hw-12";
+    private final static String ISSUE_TITLE = "Simple test issue";
 
     @Test
     @Feature("Issue")
@@ -33,16 +33,16 @@ public class AllureLambdaStepsTest extends TestBase {
             mainPage.openPage();
         });
         step("Search the repository", () -> {
-            mainPage.setSearchQuery(searchQuery);
+            mainPage.setSearchQuery(SEARCH_QUERY);
         });
         step("Select the repository", ()-> {
-            searchPage.selectRepository(repositoryTitle);
+            searchPage.selectRepository(REPOSITORY_TITLE);
         });
         step("Click on Issue tab", ()-> {
             repositoryPage.clickIssueTab();
         });
         step("Check the first issue title", ()-> {
-            issuePage.checkFirstIssueTitle(issueTitle);
+            issuePage.checkFirstIssueTitle(ISSUE_TITLE);
         });
     }
 
